@@ -1,7 +1,15 @@
 export const Logo: React.FC = () => {
-  return (
-    <div className="w-[50px] h-[50px] rounded-full bg-[red] absolute bottom-[110px] flex justify-center items-center">
-      Logo
-    </div>
-  );
+	return (
+		<div className="absolute bottom-[110px] left-[50px] font-logo">
+			<div className="text-white font-bold text-[60px] leading-[45px]">
+				HO
+			</div>
+			<div className="text-white font-bold text-[60px] leading-[45px]">
+				LOV
+			</div>
+			<div className="text-white font-bold text-[60px] leading-[45px]">
+				IN.
+			</div>
+		</div>
+	);
 };
