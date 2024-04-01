@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Roboto, Montserrat } from 'next/font/google';
+import { Roboto, Montserrat, Tilt_Warp } from 'next/font/google';
 import './globals.css';
 
 const roboto = Roboto({
@@ -11,6 +11,11 @@ const montserrat = Montserrat({
 	subsets: ['latin'],
 	variable: '--logo-font',
 	weight: ['400', '500', '700'],
+});
+const tiltWarp = Tilt_Warp({
+	subsets: ['latin'],
+	variable: '--nav-font',
+	weight: ['400'],
 });
 
 export const metadata: Metadata = {
@@ -26,7 +31,7 @@ export default function RootLayout({
 	return (
 		<html
 			lang="en"
-			className={`${roboto.variable} ${montserrat.variable} font-body padding`}>
+			className={`${roboto.variable} ${montserrat.variable} ${tiltWarp.variable} font-body padding`}>
 			<body>{children}</body>
 		</html>
 	);

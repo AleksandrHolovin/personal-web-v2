@@ -10,6 +10,7 @@ const config: Config = {
 		fontFamily: {
 			body: 'var(--body-font)',
 			logo: 'var(--logo-font)',
+			nav: 'var(--nav-font)',
 		},
 		extend: {
 			backgroundImage: {

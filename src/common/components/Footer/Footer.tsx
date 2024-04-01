@@ -6,7 +6,7 @@ export const Footer: React.FC = () => {
 			className="
 		w-screen 
 		h-[100px]
-		absolute 
+		fixed 
 		bottom-0 
 		px-[50px] 
 		py-[20px] 
@@ -15,7 +15,7 @@ export const Footer: React.FC = () => {
 		justify-between 
 		text-white 
 		text-sm">
-			<div className="flex gap-5">
+			<div className="flex gap-10">
 				<div>
 					<div>Oleksandr Holovin</div>
 					<div>Web Development</div>
