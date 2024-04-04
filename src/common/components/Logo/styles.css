@@ -1,0 +1,7 @@
+.hover-wrapper {
+	transition: 0.5s;
+	&:hover {
+		-webkit-text-stroke: 1px white;
+		color: transparent;
+	}
+}

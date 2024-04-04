@@ -1,0 +1,17 @@
+.wrapper {
+	transform: perspective(2000px) rotateY(-25deg);
+	transform-origin: right;
+	transition: transform 1s ease 0s;
+	cursor: pointer;
+}
+
+.link-wrapper {
+	transform-origin: right;
+	transition: transform 1s ease 0s;
+
+	&:hover {
+		transform: perspective(1000px) rotateY(15deg);
+		-webkit-text-stroke: 1px black;
+		color: transparent;
+	}
+}
