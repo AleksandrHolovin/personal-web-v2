@@ -2,16 +2,21 @@
 	transform: perspective(2000px) rotateY(-25deg);
 	transform-origin: right;
 	transition: transform 1s ease 0s;
-	cursor: pointer;
 }
 
 .link-wrapper {
 	transform-origin: right;
-	transition: transform 1s ease 0s;
+	transition: transform 0.5s ease 0s;
 
 	&:hover {
-		transform: perspective(1000px) rotateY(15deg);
-		-webkit-text-stroke: 1px black;
+		transform: perspective(2000px) rotateY(15deg);
+		-webkit-text-stroke: 1px theme('colors.appBlack');
 		color: transparent;
+	}
+}
+
+.dark .link-wrapper {
+	&:hover {
+		-webkit-text-stroke: 1px white;
 	}
 }

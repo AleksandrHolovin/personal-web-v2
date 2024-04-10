@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import { Roboto, Montserrat, Tilt_Warp } from 'next/font/google';
 import './globals.css';
 
+import { Providers } from './providers';
+
 const roboto = Roboto({
 	subsets: ['latin'],
 	variable: '--body-font',
@@ -31,8 +33,11 @@ export default function RootLayout({
 	return (
 		<html
 			lang="en"
-			className={`${roboto.variable} ${montserrat.variable} ${tiltWarp.variable} font-body padding`}>
-			<body>{children}</body>
+			className={`${roboto.variable} ${montserrat.variable} ${tiltWarp.variable} font-body padding`}
+			suppressHydrationWarning={true}>
+			<body className="bg-white dark:bg-appBlack transition-bg duration-500">
+				<Providers>{children}</Providers>
+			</body>
 		</html>
 	);
 }

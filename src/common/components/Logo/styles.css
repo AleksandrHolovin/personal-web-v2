@@ -1,7 +1,13 @@
 .hover-wrapper {
-	transition: 0.5s;
+	&:hover {
+		transition: 0.5s;
+		-webkit-text-stroke: 1px theme('colors.appBlack');
+		color: transparent;
+	}
+}
+
+.dark .hover-wrapper {
 	&:hover {
 		-webkit-text-stroke: 1px white;
-		color: transparent;
 	}
 }

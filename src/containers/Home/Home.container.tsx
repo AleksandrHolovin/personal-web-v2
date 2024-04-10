@@ -1,8 +1,10 @@
-import { Footer, Logo, Navigation } from '@/common/components';
+'use client';
+import { Footer, Logo, Navigation, ThemeSwitch } from '@/common/components';
 
 export const HomeContainer: React.FC = () => {
 	return (
-		<div className="bg-appGreen">
+		<div>
+			<ThemeSwitch />
 			<Footer />
 			<Logo />
 			<Navigation />

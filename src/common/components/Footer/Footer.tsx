@@ -1,9 +1,13 @@
+import { ThemeType } from '@/common/enums';
 import { FooterLink } from './components/FooterLink';
+import { useTheme } from 'next-themes';
 
 export const Footer: React.FC = () => {
 	return (
 		<footer
-			className="
+			className={`
+		text-appBlack
+		dark:text-white
 		w-screen 
 		h-[100px]
 		fixed 
@@ -13,8 +17,8 @@ export const Footer: React.FC = () => {
 		flex 
 		items-center 
 		justify-between 
-		text-white 
-		text-sm">
+		text-sm
+		z-50`}>
 			<div className="flex gap-10">
 				<div>
 					<div>Oleksandr Holovin</div>
@@ -27,27 +31,12 @@ export const Footer: React.FC = () => {
 				<div>
 					<FooterLink number="01" label="about" link="about" />
 					<FooterLink number="02" label="journal" link="journal" />
-					{/* <div className="hover:scale-95 text-xs">
-						01 <span className="font-bold text-sm">about</span>
-					</div>
-					<div>
-						02 <span className="font-bold text-sm">journal</span>
-					</div> */}
 				</div>
 			</div>
 			<div>
 				<FooterLink number="03" label="twitter" link="twitter" />
 				<FooterLink number="04" label="instagram" link="instagram" />
 				<FooterLink number="05" label="linkedin" link="linkedin" />
-				{/* <div>
-					03 <span className="font-bold text-sm">twitter</span>
-				</div>
-				<div>
-					04 <span className="font-bold  text-sm">instagram</span>
-				</div>
-				<div>
-					05 <span className="font-bold  text-sm">linkedin</span>
-				</div> */}
 			</div>
 		</footer>
 	);

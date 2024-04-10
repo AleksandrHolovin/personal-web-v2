@@ -7,10 +7,21 @@ interface INavigationItemProps {
 }
 export const NavigationItem: React.FC<INavigationItemProps> = ({
 	label,
-	link,
+	// link,
 }) => {
 	return (
-		<div className="link-wrapper text-[140px] text-appBlack py-[5px] leading-[125px] font-bold uppercase font-nav">
+		<div
+			className="
+		text-appBlack 
+		dark:text-white
+		link-wrapper 
+		text-[15vw] 
+		py-[5px] 
+		leading-[11vw] 
+		font-bold 
+		uppercase 
+		font-nav 
+		cursor-pointer">
 			{label}
 		</div>
 	);
