@@ -3,6 +3,10 @@ import { FiSun, FiMoon } from 'react-icons/fi';
 import { useTheme } from 'next-themes';
 import { ThemeType } from '@/common/enums';
 import { AnimatePresence, motion, HTMLMotionProps } from 'framer-motion';
+import {
+	HOME_ITEMS_ANIMATION_DURATION,
+	NAVIGATION_ANIMATION_DELAY,
+} from '@/common/constants';
 
 const ICON_SIZE = 30;
 const ANIMATION_STYLE: HTMLMotionProps<'div'> = {
@@ -36,7 +40,18 @@ export const ThemeSwitch = () => {
 
 	return (
 		<div className="fixed left-[50px] top-[20px] cursor-pointer">
-			<AnimatePresence>{icon}</AnimatePresence>
+			<AnimatePresence>
+				<motion.div
+					key="entering"
+					initial={{ y: -300, opacity: 0 }}
+					animate={{ y: 0, opacity: 1 }}
+					transition={{
+						delay: NAVIGATION_ANIMATION_DELAY,
+						duration: HOME_ITEMS_ANIMATION_DURATION,
+					}}>
+					{icon}
+				</motion.div>
+			</AnimatePresence>
 		</div>
 	);
 };

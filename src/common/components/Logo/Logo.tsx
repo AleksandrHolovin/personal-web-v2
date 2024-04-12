@@ -1,4 +1,14 @@
+import { AnimatePresence, HTMLMotionProps, motion } from 'framer-motion';
 import './styles.css';
+import {
+	HOME_ITEMS_ANIMATION_DURATION,
+	NAVIGATION_ANIMATION_DELAY,
+} from '@/common/constants';
+
+const ANIMATION_STYLE: HTMLMotionProps<'div'> = {
+	initial: { x: -300, opacity: 0 },
+	animate: { x: 0, opacity: 1 },
+};
 
 export const Logo: React.FC = () => {
 	const rowStyles =
@@ -6,9 +16,35 @@ export const Logo: React.FC = () => {
 
 	return (
 		<div className="cursor-pointer fixed bottom-[110px] left-[50px] font-logo">
-			<div className={rowStyles}>HO</div>
-			<div className={rowStyles}>LOV</div>
-			<div className={rowStyles}>IN.</div>
+			<AnimatePresence>
+				<motion.div
+					key="logo-ho"
+					transition={{
+						delay: NAVIGATION_ANIMATION_DELAY,
+						duration: HOME_ITEMS_ANIMATION_DURATION,
+					}}
+					{...ANIMATION_STYLE}>
+					<div className={rowStyles}>HO</div>
+				</motion.div>
+				<motion.div
+					key="logo-lov"
+					transition={{
+						delay: NAVIGATION_ANIMATION_DELAY + 0.1,
+						duration: HOME_ITEMS_ANIMATION_DURATION,
+					}}
+					{...ANIMATION_STYLE}>
+					<div className={rowStyles}>LOV</div>
+				</motion.div>
+				<motion.div
+					key="dark-in"
+					transition={{
+						delay: NAVIGATION_ANIMATION_DELAY + 0.2,
+						duration: HOME_ITEMS_ANIMATION_DURATION,
+					}}
+					{...ANIMATION_STYLE}>
+					<div className={rowStyles}>IN.</div>
+				</motion.div>
+			</AnimatePresence>
 		</div>
 	);
 };
