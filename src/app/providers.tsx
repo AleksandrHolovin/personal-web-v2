@@ -1,4 +1,5 @@
 'use client';
+import { PageAnimatePresence } from '@/common/components';
 import { ThemeProvider } from 'next-themes';
 
 export function Providers({ children }: { children: React.ReactNode }) {
@@ -7,7 +8,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
 			attribute="class"
 			defaultTheme="system"
 			enableSystem={true}>
-			{children}
+			<PageAnimatePresence>{children}</PageAnimatePresence>
 		</ThemeProvider>
 	);
 }

@@ -4,9 +4,9 @@ import { Footer, Logo, Navigation, ThemeSwitch } from '@/common/components';
 export const HomeContainer: React.FC = () => {
 	return (
 		<div>
-			<ThemeSwitch />
+			{/* <ThemeSwitch />
 			<Footer />
-			<Logo />
+			<Logo /> */}
 			<Navigation />
 		</div>
 	);
