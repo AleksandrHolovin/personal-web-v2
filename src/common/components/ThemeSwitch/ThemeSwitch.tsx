@@ -39,7 +39,7 @@ export const ThemeSwitch = () => {
 		);
 
 	return (
-		<div className="fixed left-[50px] top-[20px] cursor-pointer">
+		<div className="hidden md:fixed left-[50px] top-[20px] cursor-pointer">
 			<AnimatePresence>
 				<motion.div
 					key="entering"

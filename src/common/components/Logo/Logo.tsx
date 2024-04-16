@@ -15,7 +15,14 @@ export const Logo: React.FC = () => {
 		'text-appBlack dark:text-white text-appBlack font-bold text-[60px] leading-[45px] hover-wrapper';
 
 	return (
-		<div className="cursor-pointer fixed bottom-[110px] left-[50px] font-logo">
+		<div
+			className="
+			hidden
+			md:block
+			cursor-pointer 
+			fixed bottom-[110px] 
+			left-[50px] 
+			font-logo">
 			<AnimatePresence>
 				<motion.div
 					key="logo-ho"

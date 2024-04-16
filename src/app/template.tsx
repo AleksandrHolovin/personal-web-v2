@@ -1,6 +1,19 @@
 'use client';
-import { Footer, Logo, ThemeSwitch } from '@/common/components';
+import {
+	Footer,
+	Logo,
+	// MobileNavigation,
+	ThemeSwitch,
+} from '@/common/components';
 import { motion } from 'framer-motion';
+import dynamic from 'next/dynamic';
+
+export const MobileNavigation = dynamic(
+	() => import('./../common/components/MobileNavigation/MobileNavigation'),
+	{
+		ssr: false,
+	},
+);
 
 const variants = {
 	hidden: { opacity: 0, x: 0, y: 0 },
@@ -17,6 +30,7 @@ export default function Template({ children }: { children: React.ReactNode }) {
 			transition={{ type: 'linear', duration: 0.25 }}
 			key="LandingPage">
 			<ThemeSwitch />
+			<MobileNavigation />
 			<Footer />
 			<Logo />
 			{children}

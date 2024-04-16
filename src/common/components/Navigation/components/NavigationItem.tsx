@@ -1,7 +1,6 @@
 'use client';
 import { HTMLMotionProps, motion } from 'framer-motion';
 import './styles.css';
-import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 
 const ANIMATION_STYLE: HTMLMotionProps<'div'> = {
@@ -30,9 +29,11 @@ export const NavigationItem: React.FC<INavigationItemProps> = ({
 					text-appBlack 
 					dark:text-white
 					link-wrapper 
-					text-[15vw] 
+					text-[20vw]
+					leading-[15vw] 
+					md:text-[15vw] 
+					md:leading-[11vw] 
 					py-[5px] 
-					leading-[11vw] 
 					font-bold 
 					uppercase 
 					font-nav 

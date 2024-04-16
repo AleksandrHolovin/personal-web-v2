@@ -3,3 +3,4 @@ export * from './Logo/Logo';
 export * from './Navigation/Navigation';
 export * from './ThemeSwitch/ThemeSwitch';
 export * from './HOC/PageAnimatePresence';
+export * from './MobileNavigation/MobileNavigation';

@@ -14,19 +14,20 @@ export const Footer: React.FC = () => {
 	return (
 		<footer
 			className={`
-		text-appBlack
-		dark:text-white
-		w-screen 
-		h-[100px]
-		fixed 
-		bottom-0 
-		px-[50px] 
-		py-[20px] 
-		flex 
-		items-center 
-		justify-between 
-		text-sm
-		z-50`}>
+			hidden
+			md:flex 
+			text-appBlack
+			dark:text-white
+			w-screen 
+			h-[100px]
+			fixed 
+			bottom-0 
+			px-[50px] 
+			py-[20px] 
+			items-center 
+			justify-between 
+			text-sm
+			z-50`}>
 			<AnimatePresence>
 				<div className="flex gap-10">
 					<motion.div
