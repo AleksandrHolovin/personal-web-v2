@@ -16,7 +16,14 @@ const ANIMATION_STYLE: HTMLMotionProps<'div'> = {
 	style: { position: 'absolute' },
 };
 
-export const ThemeSwitch = () => {
+interface IThemeSwitchProps {
+	containerStyles: string;
+	transitionProps: HTMLMotionProps<'div'>['transition'];
+}
+export const ThemeSwitch: React.FC<IThemeSwitchProps> = ({
+	containerStyles,
+	transitionProps,
+}) => {
 	const { setTheme, resolvedTheme } = useTheme();
 
 	const icon =
@@ -39,19 +46,16 @@ export const ThemeSwitch = () => {
 		);
 
 	return (
-		<div className="hidden md:fixed left-[50px] top-[20px] cursor-pointer">
+		<button className={`appearance-none cursor-pointer ${containerStyles}`}>
 			<AnimatePresence>
 				<motion.div
 					key="entering"
 					initial={{ y: -300, opacity: 0 }}
 					animate={{ y: 0, opacity: 1 }}
-					transition={{
-						delay: NAVIGATION_ANIMATION_DELAY,
-						duration: HOME_ITEMS_ANIMATION_DURATION,
-					}}>
+					transition={transitionProps}>
 					{icon}
 				</motion.div>
 			</AnimatePresence>
-		</div>
+		</button>
 	);
 };

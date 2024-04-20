@@ -28,59 +28,49 @@ export const Footer: React.FC = () => {
 			justify-between 
 			text-sm
 			z-50`}>
-			<AnimatePresence>
-				<div className="flex gap-10">
-					<motion.div
-						key="data"
-						transition={{
-							delay: NAVIGATION_ANIMATION_DELAY,
-							duration: HOME_ITEMS_ANIMATION_DURATION,
-						}}
-						{...ANIMATION_STYLE}>
-						<div>Oleksandr Holovin</div>
-						<div>Web Development</div>
-					</motion.div>
-					<motion.div
-						key="contact"
-						transition={{
-							delay: NAVIGATION_ANIMATION_DELAY + 0.1,
-							duration: HOME_ITEMS_ANIMATION_DURATION,
-						}}
-						{...ANIMATION_STYLE}>
-						<div>Kharkiv</div>
-						<div className="font-bold">oleksandr@holovin.com</div>
-					</motion.div>
-					<motion.div
-						key="internal-links"
-						transition={{
-							delay: NAVIGATION_ANIMATION_DELAY + 0.2,
-							duration: HOME_ITEMS_ANIMATION_DURATION,
-						}}
-						{...ANIMATION_STYLE}>
-						<FooterLink number="01" label="about" link="about" />
-						<FooterLink
-							number="02"
-							label="journal"
-							link="journal"
-						/>
-					</motion.div>
-				</div>
+			<div className="flex gap-10">
 				<motion.div
-					key="external-links"
+					key="data"
 					transition={{
-						delay: NAVIGATION_ANIMATION_DELAY + 0.3,
+						delay: NAVIGATION_ANIMATION_DELAY,
 						duration: HOME_ITEMS_ANIMATION_DURATION,
 					}}
 					{...ANIMATION_STYLE}>
-					<FooterLink number="03" label="twitter" link="twitter" />
-					<FooterLink
-						number="04"
-						label="instagram"
-						link="instagram"
-					/>
-					<FooterLink number="05" label="linkedin" link="linkedin" />
+					<div>Oleksandr Holovin</div>
+					<div>Web Development</div>
 				</motion.div>
-			</AnimatePresence>
+				<motion.div
+					key="contact"
+					transition={{
+						delay: NAVIGATION_ANIMATION_DELAY + 0.1,
+						duration: HOME_ITEMS_ANIMATION_DURATION,
+					}}
+					{...ANIMATION_STYLE}>
+					<div>Kharkiv</div>
+					<div className="font-bold">oleksandr@holovin.com</div>
+				</motion.div>
+				<motion.div
+					key="internal-links"
+					transition={{
+						delay: NAVIGATION_ANIMATION_DELAY + 0.2,
+						duration: HOME_ITEMS_ANIMATION_DURATION,
+					}}
+					{...ANIMATION_STYLE}>
+					<FooterLink number="01" label="about" link="about" />
+					<FooterLink number="02" label="journal" link="journal" />
+				</motion.div>
+			</div>
+			<motion.div
+				key="external-links"
+				transition={{
+					delay: NAVIGATION_ANIMATION_DELAY + 0.3,
+					duration: HOME_ITEMS_ANIMATION_DURATION,
+				}}
+				{...ANIMATION_STYLE}>
+				<FooterLink number="03" label="twitter" link="twitter" />
+				<FooterLink number="04" label="instagram" link="instagram" />
+				<FooterLink number="05" label="linkedin" link="linkedin" />
+			</motion.div>
 		</footer>
 	);
 };

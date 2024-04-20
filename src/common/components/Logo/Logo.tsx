@@ -10,7 +10,7 @@ const ANIMATION_STYLE: HTMLMotionProps<'div'> = {
 	animate: { x: 0, opacity: 1 },
 };
 
-export const Logo: React.FC = () => {
+export const HomeLogo: React.FC = () => {
 	const rowStyles =
 		'text-appBlack dark:text-white text-appBlack font-bold text-[60px] leading-[45px] hover-wrapper';
 
