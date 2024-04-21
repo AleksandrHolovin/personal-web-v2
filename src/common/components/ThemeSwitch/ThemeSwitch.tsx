@@ -3,10 +3,6 @@ import { FiSun, FiMoon } from 'react-icons/fi';
 import { useTheme } from 'next-themes';
 import { ThemeType } from '@/common/enums';
 import { AnimatePresence, motion, HTMLMotionProps } from 'framer-motion';
-import {
-	HOME_ITEMS_ANIMATION_DURATION,
-	NAVIGATION_ANIMATION_DELAY,
-} from '@/common/constants';
 
 const ICON_SIZE = 30;
 const ANIMATION_STYLE: HTMLMotionProps<'div'> = {
@@ -18,7 +14,7 @@ const ANIMATION_STYLE: HTMLMotionProps<'div'> = {
 
 interface IThemeSwitchProps {
 	containerStyles: string;
-	transitionProps: HTMLMotionProps<'div'>['transition'];
+	transitionProps?: HTMLMotionProps<'div'>['transition'];
 }
 export const ThemeSwitch: React.FC<IThemeSwitchProps> = ({
 	containerStyles,

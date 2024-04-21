@@ -25,16 +25,6 @@ export default function Template({ children }: { children: React.ReactNode }) {
 			animate="enter"
 			transition={{ type: 'linear', duration: 0.25 }}
 			key="LandingPage">
-			<ThemeSwitch
-				transitionProps={{
-					delay: NAVIGATION_ANIMATION_DELAY,
-					duration: HOME_ITEMS_ANIMATION_DURATION,
-				}}
-				containerStyles="hidden md:block fixed left-[50px] top-[20px] cursor-pointer"
-			/>
-			<Footer />
-			<HomeLogo />
-			<MobileNavigation />
 			{children}
 		</motion.main>
 	);

@@ -4,6 +4,10 @@ import './globals.css';
 
 import { Providers } from './providers';
 
+import { Footer } from '@/common/components/Footer/Footer';
+import { HomeLogo } from '@/common/components/Logo/Logo';
+import { MobileNavigation } from '@/common/components/MobileNavigation/MobileNavigation';
+
 const roboto = Roboto({
 	subsets: ['latin'],
 	variable: '--body-font',
@@ -36,6 +40,9 @@ export default function RootLayout({
 			className={`${roboto.variable} ${montserrat.variable} ${tiltWarp.variable} font-body padding`}
 			suppressHydrationWarning={true}>
 			<body className="bg-white dark:bg-appBlack transition-bg duration-500">
+				<Footer />
+				<HomeLogo />
+				<MobileNavigation />
 				<Providers>{children}</Providers>
 			</body>
 		</html>
