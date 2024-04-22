@@ -42,8 +42,7 @@ export default function RootLayout({
 			<body className="bg-white dark:bg-appBlack transition-bg duration-500">
 				<Footer />
 				<HomeLogo />
-				<MobileNavigation />
-				<Providers>{children}</Providers>
+				<Providers> {children}</Providers>
 			</body>
 		</html>
 	);

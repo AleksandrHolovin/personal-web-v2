@@ -7,7 +7,7 @@ export default function ProjectsLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<section>
+		<>
 			<ThemeSwitch
 				transitionProps={{
 					duration: HOME_ITEMS_ANIMATION_DURATION,
@@ -15,6 +15,6 @@ export default function ProjectsLayout({
 				containerStyles="hidden md:block fixed right-[50px] top-[20px] cursor-pointer"
 			/>
 			{children}
-		</section>
+		</>
 	);
 }

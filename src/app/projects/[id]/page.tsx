@@ -1,3 +1,5 @@
-export default function ProjectPage({ params }: { params: { id: string } }) {
-	return <div>My Project: {params.id}</div>;
+import { MockProjectContainer } from '@/containers';
+
+export default function ProjectPage() {
+	return <MockProjectContainer />;
 }

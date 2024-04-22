@@ -52,7 +52,7 @@ export const MobileNavigation: React.FC = () => {
 				onClose={onClose}
 				finalFocusRef={btnRef as any}>
 				<DrawerOverlay bg="rgba(255,255,255,0.5)" />
-				<DrawerContent>
+				<DrawerContent maxW="85vw">
 					<DrawerBody p={0}>
 						<div
 							className="
@@ -60,12 +60,14 @@ export const MobileNavigation: React.FC = () => {
 							dark:text-white 
 							bg-white 
 							dark:bg-appBlack
-							h-[100%]
+							h-[100vh]
 							text-sm
 							flex
 							flex-col
 							items-end
-							px-[20px]">
+							justify-end
+							px-[20px]
+							overflow-x-hidden">
 							<button
 								onClick={onClose}
 								className="appearance-none absolute right-[20px] top-[20px] cursor-pointer">
@@ -77,7 +79,7 @@ export const MobileNavigation: React.FC = () => {
 									duration: HOME_ITEMS_ANIMATION_DURATION,
 								}}
 								style={{
-									marginTop: '60px',
+									marginBottom: '20px',
 									...BLOCK_STYLE,
 								}}
 								{...ANIMATION_STYLE}>
@@ -99,7 +101,7 @@ export const MobileNavigation: React.FC = () => {
 									duration: HOME_ITEMS_ANIMATION_DURATION,
 								}}
 								style={{
-									marginTop: '20px',
+									marginBottom: '20px',
 									...BLOCK_STYLE,
 								}}
 								{...ANIMATION_STYLE}>
@@ -126,7 +128,7 @@ export const MobileNavigation: React.FC = () => {
 									duration: HOME_ITEMS_ANIMATION_DURATION,
 								}}
 								style={{
-									marginTop: '20px',
+									marginBottom: '20px',
 									...BLOCK_STYLE,
 								}}
 								{...ANIMATION_STYLE}>
@@ -140,7 +142,7 @@ export const MobileNavigation: React.FC = () => {
 									duration: HOME_ITEMS_ANIMATION_DURATION,
 								}}
 								style={{
-									marginTop: '20px',
+									marginBottom: '60px',
 									...BLOCK_STYLE,
 								}}
 								{...ANIMATION_STYLE}>

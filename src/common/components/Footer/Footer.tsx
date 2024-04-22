@@ -4,7 +4,8 @@ import {
 	NAVIGATION_ANIMATION_DELAY,
 } from '@/common/constants';
 import { FooterLink } from './components/FooterLink';
-import { AnimatePresence, HTMLMotionProps, motion } from 'framer-motion';
+import { HTMLMotionProps, motion } from 'framer-motion';
+import { usePathname } from 'next/navigation';
 
 const ANIMATION_STYLE: HTMLMotionProps<'div'> = {
 	initial: { y: 300, opacity: 0 },
@@ -12,6 +13,11 @@ const ANIMATION_STYLE: HTMLMotionProps<'div'> = {
 };
 
 export const Footer: React.FC = () => {
+	const pathname = usePathname();
+
+	const isHomeRoute = pathname === '/';
+	const delay = isHomeRoute ? NAVIGATION_ANIMATION_DELAY : 0;
+
 	return (
 		<footer
 			className={`
@@ -33,7 +39,7 @@ export const Footer: React.FC = () => {
 				<motion.div
 					key="data"
 					transition={{
-						delay: NAVIGATION_ANIMATION_DELAY,
+						delay,
 						duration: HOME_ITEMS_ANIMATION_DURATION,
 					}}
 					{...ANIMATION_STYLE}>
@@ -43,7 +49,7 @@ export const Footer: React.FC = () => {
 				<motion.div
 					key="contact"
 					transition={{
-						delay: NAVIGATION_ANIMATION_DELAY + 0.1,
+						delay: delay + 0.1,
 						duration: HOME_ITEMS_ANIMATION_DURATION,
 					}}
 					{...ANIMATION_STYLE}>
@@ -53,7 +59,7 @@ export const Footer: React.FC = () => {
 				<motion.div
 					key="internal-links"
 					transition={{
-						delay: NAVIGATION_ANIMATION_DELAY + 0.2,
+						delay: delay + 0.2,
 						duration: HOME_ITEMS_ANIMATION_DURATION,
 					}}
 					{...ANIMATION_STYLE}>
@@ -64,7 +70,7 @@ export const Footer: React.FC = () => {
 			<motion.div
 				key="external-links"
 				transition={{
-					delay: NAVIGATION_ANIMATION_DELAY + 0.3,
+					delay: delay + 0.3,
 					duration: HOME_ITEMS_ANIMATION_DURATION,
 				}}
 				{...ANIMATION_STYLE}>

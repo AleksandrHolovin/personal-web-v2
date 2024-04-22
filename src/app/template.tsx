@@ -1,14 +1,6 @@
 'use client';
-import {
-	Footer,
-	HomeLogo,
-	MobileNavigation,
-	ThemeSwitch,
-} from '@/common/components';
-import {
-	HOME_ITEMS_ANIMATION_DURATION,
-	NAVIGATION_ANIMATION_DELAY,
-} from '@/common/constants';
+import { MobileNavigation } from '@/common/components';
+
 import { motion } from 'framer-motion';
 
 const variants = {
@@ -25,6 +17,7 @@ export default function Template({ children }: { children: React.ReactNode }) {
 			animate="enter"
 			transition={{ type: 'linear', duration: 0.25 }}
 			key="LandingPage">
+			<MobileNavigation />
 			{children}
 		</motion.main>
 	);

@@ -9,7 +9,6 @@ const ANIMATION_STYLE: HTMLMotionProps<'div'> = {
 	initial: { x: 300, opacity: 0 },
 	animate: { x: 0, opacity: 1 },
 	exit: { x: -300, opacity: 0 },
-	style: { position: 'absolute' },
 };
 
 interface IThemeSwitchProps {
@@ -21,28 +20,26 @@ export const ThemeSwitch: React.FC<IThemeSwitchProps> = ({
 	transitionProps,
 }) => {
 	const { setTheme, resolvedTheme } = useTheme();
+	const switchHandler = () =>
+		setTheme(resolvedTheme === ThemeType.Dark ? 'light' : 'dark');
 
 	const icon =
 		resolvedTheme === ThemeType.Dark ? (
 			<motion.div key="light-theme" {...ANIMATION_STYLE}>
-				<FiSun
-					onClick={() => setTheme('light')}
-					color="white"
-					size={ICON_SIZE}
-				/>
+				<FiSun color="white" size={ICON_SIZE} />
 			</motion.div>
 		) : (
 			<motion.div key="dark-theme" {...ANIMATION_STYLE}>
-				<FiMoon
-					onClick={() => setTheme('dark')}
-					color="black"
-					size={ICON_SIZE}
-				/>
+				<FiMoon color="black" size={ICON_SIZE} />
 			</motion.div>
 		);
 
 	return (
-		<button className={`appearance-none cursor-pointer ${containerStyles}`}>
+		<button
+			onClick={() => {
+				switchHandler();
+			}}
+			className={`appearance-none cursor-pointer ${containerStyles}`}>
 			<AnimatePresence>
 				<motion.div
 					key="entering"

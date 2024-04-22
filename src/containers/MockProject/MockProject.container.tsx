@@ -1,3 +1,3 @@
 export const MockProjectContainer: React.FC = () => {
-	return <div>Mock Project</div>;
+	return <div className="h-[200vh] bg-slate-500">Mock Project</div>;
 };
