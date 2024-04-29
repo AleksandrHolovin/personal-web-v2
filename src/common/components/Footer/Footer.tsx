@@ -1,4 +1,5 @@
 'use client';
+import { useEffect, useState } from 'react';
 import {
 	HOME_ITEMS_ANIMATION_DURATION,
 	NAVIGATION_ANIMATION_DELAY,
@@ -15,11 +16,44 @@ const ANIMATION_STYLE: HTMLMotionProps<'div'> = {
 export const Footer: React.FC = () => {
 	const pathname = usePathname();
 
+	const [scrollBottom, setScrollBottom] = useState(false);
+
 	const isHomeRoute = pathname === '/';
 	const delay = isHomeRoute ? NAVIGATION_ANIMATION_DELAY : 0;
+	const containerAnimationStyle = {
+		animate: isHomeRoute ? undefined : { y: scrollBottom ? 0 : 100 },
+	};
+
+	const handleScroll = () => {
+		const windowHeight =
+			'innerHeight' in window
+				? window.innerHeight
+				: document.documentElement.offsetHeight;
+		const body = document.body;
+		const html = document.documentElement;
+		const docHeight = Math.max(
+			body.scrollHeight,
+			body.offsetHeight,
+			html.clientHeight,
+			html.scrollHeight,
+			html.offsetHeight,
+		);
+		const windowBottom = windowHeight + window.pageYOffset + 100;
+		//100 additional offset to show footer earlier then user riches bottom for 100px
+		if (windowBottom >= docHeight) {
+			setScrollBottom(true);
+		} else {
+			setScrollBottom(false);
+		}
+	};
+
+	useEffect(() => {
+		window.addEventListener('scroll', handleScroll);
+		return () => window.removeEventListener('scroll', handleScroll);
+	}, []);
 
 	return (
-		<footer
+		<motion.div
 			className={`
 			hidden
 			md:flex 
@@ -34,7 +68,9 @@ export const Footer: React.FC = () => {
 			items-center 
 			justify-between 
 			text-sm
-			z-50`}>
+			z-50`}
+			{...containerAnimationStyle}
+			transition={{ duration: HOME_ITEMS_ANIMATION_DURATION }}>
 			<div className="flex gap-10">
 				<motion.div
 					key="data"
@@ -78,6 +114,6 @@ export const Footer: React.FC = () => {
 				<FooterLink number="04" label="instagram" link="instagram" />
 				<FooterLink number="05" label="linkedin" link="linkedin" />
 			</motion.div>
-		</footer>
+		</motion.div>
 	);
 };
