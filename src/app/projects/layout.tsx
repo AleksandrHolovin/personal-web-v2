@@ -14,7 +14,7 @@ export default function ProjectsLayout({
 				}}
 				containerStyles="hidden md:block fixed right-[50px] top-[20px] cursor-pointer"
 			/>
-			{children}
+			<div className="mt-[200px]">{children}</div>
 		</>
 	);
 }

@@ -1,7 +1,7 @@
 export const NAVIGATION_ITEMS = [
 	{
 		label: 'Project 1',
-		link: 'projects/1',
+		link: 'projects/jungle-boys',
 	},
 	{
 		label: 'Project 2',
