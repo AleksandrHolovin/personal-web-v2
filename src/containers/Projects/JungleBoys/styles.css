@@ -1,0 +1,8 @@
+.blank-text {
+	-webkit-text-stroke: 4px theme('colors.appGreen');
+	color: transparent;
+}
+.dark .blank-text {
+	-webkit-text-stroke: 4px theme('colors.cyan');
+	color: transparent;
+}

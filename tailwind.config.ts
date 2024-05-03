@@ -23,6 +23,7 @@ const config: Config = {
 				appBrown: '#A1887F',
 				appBlack: '#212121',
 				appGrey: ': #E0E0E0',
+				cyan: '#59f6c9',
 			},
 		},
 	},

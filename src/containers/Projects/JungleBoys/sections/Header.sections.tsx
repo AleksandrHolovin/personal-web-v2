@@ -1,4 +1,5 @@
 import HeaderImage from '@/assets/jungle-boys/header-img.png';
+import '../styles.css';
 
 export const HeaderSection: React.FC = () => {
 	return (
@@ -13,11 +14,10 @@ export const HeaderSection: React.FC = () => {
                     absolute 
                     top-[-70px] 
                     right-[20px] 
-                    text-appBlack 
-					dark:text-white
                     text-[100px]
                     uppercase 
 					font-nav
+					blank-text
                     ">
 				Jungle Boys
 			</span>
